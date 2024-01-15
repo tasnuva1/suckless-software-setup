@@ -197,7 +197,7 @@ static const Key keys[] = {
 	/*{ MODKEY|ShiftMask,		XK_bracketleft,		spawn,		{.v = (const char*[]){ "mpc", "seek", "-60", NULL } } },*/
 	{ MODKEY|ShiftMask,		XK_bracketleft,		spawn,		SHCMD("xdotool search --name 'mpv' key --clearmodifiers --window %@ 'bracketleft'") },
 	/*{ MODKEY,			XK_bracketright,	spawn,		{.v = (const char*[]){ "mpc", "seek", "+10", NULL } } },*/
-	{ MODKEY,			XK_bracketright,	spawn,		SHCMD("xdotool search --name 'mpv' key --clearmodifiers --window %@ 'k'") },
+	{ MODKEY,			XK_bracketright,	spawn,		SHCMD("xdotool search --name 'mpv' key --clearmodifiers --window %@ 'l'") },
 	/*{ MODKEY|ShiftMask,		XK_bracketright,	spawn,		{.v = (const char*[]){ "mpc", "seek", "+60", NULL } } },*/
 	{ MODKEY|ShiftMask,		XK_bracketright,	spawn,		SHCMD("xdotool search --name 'mpv' key --clearmodifiers --window %@ 'bracketright'") },
 	{ MODKEY,			XK_backslash,		view,		{0} },
@@ -248,10 +248,15 @@ static const Key keys[] = {
 	{ MODKEY,			XK_period,	spawn,		SHCMD("xdotool search --name 'mpv' key --clearmodifiers --window %@ 'shift+k'") },
 	{ MODKEY|ShiftMask,		XK_period,	spawn,		{.v = (const char*[]){ "mpc", "repeat", NULL } } },
 
-	{ MODKEY,			XK_Left,	focusmon,	{.i = -1 } },
+/*	{ MODKEY,			XK_Left,	focusmon,	{.i = -1 } }, */
+	{ MODKEY,			XK_Left,		spawn,		SHCMD("xdotool search --name 'google-chrome-stable' key --clearmodifiers --window %@ 'alt+j'") },
 	{ MODKEY|ShiftMask,		XK_Left,	tagmon,		{.i = -1 } },
-	{ MODKEY,			XK_Right,	focusmon,	{.i = +1 } },
+/*	{ MODKEY,			XK_Right,	focusmon,	{.i = +1 } }, */
+	{ MODKEY,			XK_Right,		spawn,		SHCMD("xdotool search --name 'google-chrome-stable' key --clearmodifiers --window %@ 'alt+k'") },
 	{ MODKEY|ShiftMask,		XK_Right,	tagmon,		{.i = +1 } },
+
+	{ MODKEY|ControlMask,           XK_Up,		spawn,		SHCMD("xdotool search --name 'google-chrome-stable' key --clearmodifiers --window %@ 'alt+l'") },
+  { MODKEY|ControlMask,           XK_Down,		spawn,		SHCMD("xdotool search --name 'google-chrome-stable' key --clearmodifiers --window %@ 'alt+o'") },
 
 	{ MODKEY,			XK_Page_Up,	shiftview,	{ .i = -1 } },
 	{ MODKEY|ShiftMask,		XK_Page_Up,	shifttag,	{ .i = -1 } },
